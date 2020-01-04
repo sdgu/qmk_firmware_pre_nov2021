@@ -1,6 +1,7 @@
 #ifndef ATREUS62_H
 #define ATREUS62_H
 
+#include "config.h"
 #include "quantum.h"
 
 void promicro_bootloader_jmp(bool program);
