@@ -55,13 +55,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define BACKLIGHT_LEVELS 3
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
+<<<<<<< HEAD
 /* key combination for command */
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
@@ -74,6 +75,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ws2812_PORTREG  PORTD
 #define ws2812_DDRREG   DDRD
 
+=======
+>>>>>>> upstream/master
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
