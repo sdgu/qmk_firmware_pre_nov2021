@@ -17,6 +17,7 @@
 #include "keymap_steno.h"
 
 #define _DEFAULT 0
+#define _MAPLESTORY 1
 #define _PLOVER 10
 #define _LOWER 11
 #define _RAISE 12
@@ -63,8 +64,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_TAB,          KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,       KC_EQL,    KC_MINS,    KC_F,     KC_G,    KC_C,    KC_R,    KC_L,      KC_SLSH , \
    KC_LCTL,         KC_A,    KC_O,    KC_E,    KC_U,    KC_I,       KC_EQL,    KC_MINS,    KC_D,     KC_H,    KC_T,    KC_N,    KC_S,      KC_ENT , \
    KC_LSFT,         KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,       KC_SLSH,   KC_BSLS,    KC_B,     KC_M,    KC_W,    KC_V,    KC_Z,      KC_RSFT, \
-   _______,         _______, KC_LGUI, KC_LALT, LOWER,   KC_SPC,     _______,   _______,   KC_BSPC,  RAISE,   KC_RALT, KC_RGUI, _______,    _______ 
+   _______,         _______, KC_LGUI, KC_LALT, LOWER,   KC_SPC,     KC_CAPS,   _______,   KC_BSPC,  RAISE,   KC_RALT, KC_RGUI, _______,    _______ 
 ),
+
+ [_MAPLESTORY] = LAYOUT_ortho_5x14(
+  KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_5,     KC_6,    KC_7,    KC_8,    KC_9,      KC_0,    KC_BSPC, \
+  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_RBRC,  KC_Y,    KC_U,    KC_I,    KC_O,      KC_P,    KC_QUOT, \
+  KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    _______, _______,  KC_H,    KC_J,    KC_K,    KC_L,      KC_SCLN, KC_ENT,  \
+  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_SLSH,  KC_BSLS, KC_N,    KC_M,    KC_COMM, KC_DOT,    KC_UP,   KC_RSFT, \
+  _______, _______, _______,   _______, KC_SPC,  KC_LALT,  LOWER,   RAISE,    KC_SPC,  KC_LEFT, KC_DOWN, KC_LEFT,   KC_DOWN, KC_RGHT  \
+ ),
+
 
 [_LOWER] = LAYOUT_ortho_5x14(
   KC_ESC,  LCTL(KC_C),    LCTL(KC_V),       LCTL(KC_X),      LCTL(KC_S),   LCTL(KC_Z), _______, KC_TRNS,   LCTL(KC_Y),    _______,    _______,    _______, _______, _______, \
@@ -83,11 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ), 
 
 [_ADJUST] = LAYOUT_ortho_5x14(
-  TO(_DEFAULT),   PLOVER, _______, _______,  _______,   _______,  KC_TRNS, _______, _______,    _______,   _______,    ST_GEM,   ST_BOLT,   RESET, \
+  TO(_DEFAULT),   PLOVER, TO(_MAPLESTORY), _______,  _______,   _______,  RGB_TOG, _______, _______,    _______,   _______,    ST_GEM,   ST_BOLT,   RESET, \
   _______,  _______,    _______,    _______,    _______, _______, KC_TRNS, _______, _______,  _______, _______,    _______,  _______,  _______, \
   _______,  _______,    _______,    _______,    _______, _______, KC_TRNS, _______, _______,  _______, _______,  _______, _______,   _______, \
   _______,  _______,    _______,    _______,    _______, _______, KC_TRNS, _______, _______,  _______, _______,  _______,  _______,  _______, \
-  _______,  _______,    _______,    _______,    _______, _______, KC_TRNS, _______, _______,   _______, _______,  _______,  _______,  _______ 
+  _______,  _______,    _______,    _______,    _______, _______, KC_TRNS, _______, _______,   _______, _______,  STN_PWR,  STN_RE1,  STN_RE2 
 ), 
 
 
@@ -97,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   STN_S1,     STN_TL,     STN_PL,     STN_HL,  STN_ST1,  XXXXXXX, XXXXXXX,  STN_ST3, STN_FR,    STN_PR,    STN_LR,    STN_TR,    STN_DR, 
   KC_LCTL,  STN_S2,     STN_KL,     STN_WL,     STN_RL,  STN_ST2,  XXXXXXX, XXXXXXX,  STN_ST4, STN_RR,   STN_BR,     STN_GR,   STN_SR,    STN_ZR, 
   KC_LSFT,  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, LOWER,    XXXXXXX, XXXXXXX,    RAISE,   XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX, 
-  XXXXXXX,  XXXXXXX,    KC_LGUI,    KC_LALT,    LOWER,   STN_A,   STN_O, STN_E,    STN_U,   RAISE, KC_BSPC,   STN_PWR,  STN_RE1,  STN_RE2 
+  XXXXXXX,  XXXXXXX,    KC_LGUI,    KC_LALT,    STN_A,   STN_O,   XXXXXXX, XXXXXXX,    STN_E,   STN_U, KC_BSPC,   XXXXXXX,  XXXXXXX,  XXXXXXX 
 ), 
 
 /* FUNCTION
@@ -203,5 +213,43 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   }
   return true;
+}
+
+void led_set_user(uint8_t usb_led) {
+    if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
+        DDRB |= (1 << 2); PORTB &= ~(1 << 2);
+        rgblight_setrgb(25, 25, 255);
+    } else {
+        DDRB &= ~(1 << 2); PORTB &= ~(1 << 2);
+        rgblight_setrgb(0, 0, 0);
+    }
+}
+
+uint32_t layer_state_set_user(uint32_t state) {
+    switch (biton32(state)) {
+    case _DEFAULT:
+        rgblight_setrgb(0, 171, 197);
+        break;
+    case _RAISE:
+        rgblight_setrgb(0xFF, 0x00, 0x00);
+        break;
+    case _LOWER:
+        rgblight_setrgb(0x00, 0xFF, 0x00);
+        break;
+    case _ADJUST:
+        rgblight_setrgb(255, 239, 213);
+        break;
+    case _PLOVER:
+        rgblight_setrgb(134, 96, 142);
+        break;
+    default: //  for any other layers, or the default layer
+        if (host_keyboard_leds() & (1 << USB_LED_CAPS_LOCK)) {
+          rgblight_setrgb(0, 171, 197);
+        } else {
+          rgblight_setrgb(0x00, 0x00, 0x00);
+        }
+        break;
+    }
+  return state;
 }
 

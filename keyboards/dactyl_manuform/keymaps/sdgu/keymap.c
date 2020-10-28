@@ -46,10 +46,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_TAB,    KC_QUOT,    KC_COMM,    KC_DOT,   KC_P,   KC_Y,
    KC_LCTL,    KC_A,    KC_O,    KC_E,   KC_U,   KC_I,
    KC_LSHIFT, KC_SCLN,    KC_Q,    KC_J,   KC_K,   KC_X,
-                       KC_TAB,  KC_BSLS,
+                       KC_CAPS,  KC_BSLS,
                                LOWER, KC_SPC, 
-                               RAISE,   KC_LALT,
-                               OSRS, KC_LGUI, 
+                               OSRS,   KC_LALT,
+                               RAISE, KC_LGUI, 
         // right hand
                      KC_6,    KC_7,   KC_8,    KC_9,    KC_0,    KC_EQL,
                      KC_F,    KC_G,   KC_C,    KC_R,    KC_L,    KC_SLSH,
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
                      LCTL(KC_Y),    _______,    _______,    _______,     _______,  _______,
                      _______,  _______,  _______,    _______,   _______,  KC_BSLS,
-                     _______,  KC_RPRN,  KC_RCBR,  KC_RBRC, _______, _______,
+                     KC_EQL,  KC_RPRN,  KC_RCBR,  KC_RBRC, _______, _______,
                      _______,  _______,  _______,  _______,  _______,   _______,
                                          _______,  _______,
         _______, RAISE, 
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // left hand
    KC_F11,   KC_F1,      KC_F2,      KC_F3,      KC_F4,   KC_F5,
    _______,  KC_MPRV,    KC_MPLY,    KC_MNXT,    _______, _______,
-   _______,  _______,    KC_VOLD,    KC_VOLU,    KC_MUTE, _______,
+   _______,  _______,    KC_VOLD,    KC_VOLU,    KC_MUTE, KC_MINS,
    _______,    _______,  _______,  _______,  _______,  _______,
                        _______,  _______, 
                                LOWER, _______, 
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
                      KC_F6,    KC_F7,   KC_F8,    KC_F9,   KC_F10,   KC_F12,
                       _______,  _______, KC_UP,    _______,  KC_PSCR,  KC_BSLS,
-                      _______,  KC_LEFT, KC_DOWN,  KC_RIGHT, KC_INS,   KC_DEL,
+                      KC_EQL,  KC_LEFT, KC_DOWN,  KC_RIGHT, KC_INS,   KC_DEL,
                      _______,  _______,  _______,  _______,  _______,   _______,
                                          _______,  _______,
         _______, RAISE, 
