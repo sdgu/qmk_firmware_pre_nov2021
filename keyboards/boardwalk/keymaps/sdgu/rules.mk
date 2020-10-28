@@ -11,7 +11,7 @@ endif
 # NKRO_ENABLE = yes       
 
 
-NKRO_ENABLE = yes
+
 RGBLIGHT_ENABLE = yes
 EXTRAKEY_ENABLE = yes
 MOUSEKEY_ENABLE = no        # Mouse keys(+4700)

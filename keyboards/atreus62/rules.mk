@@ -16,7 +16,6 @@ BOOTLOADER = caterina
 #   the appropriate keymap folder that will get included automatically
 #
 
-
 BOOTMAGIC_ENABLE = no       # Virtual DIP switch configuration(+1000)
 MOUSEKEY_ENABLE = no       # Mouse keys(+4700)
 EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
@@ -41,6 +40,7 @@ API_SYSEX_ENABLE = no
 # #MIDI_ENABLE = no            # MIDI controls
 # UNICODE_ENABLE = yes         # Unicode
 # #BLUETOOTH_ENABLE = yes       # Enable Bluetooth with the Adafruit EZ-Key HID
+
 
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
