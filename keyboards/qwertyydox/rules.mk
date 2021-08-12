@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MCU name
 #MCU = at90usb1287
 MCU = atmega32u4
@@ -29,6 +30,11 @@ ARCH = AVR8
 #     clock generation for the USB and other AVR subsections. Do NOT tack on a 'UL'
 #     at the end, this will be done automatically to create a 32-bit value in your
 #     source code.
+=======
+# Build Options
+#   change to "no" to disable the options, or define them in the Makefile in
+#   the appropriate keymap folder that will get included automatically
+>>>>>>> upstream/master
 #
 #     If no clock division is performed on the input clock inside the AVR (via the
 #     CPU clock adjust registers or the clock division fuses), this will be equal to F_CPU.
